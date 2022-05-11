@@ -1,0 +1,8 @@
+;DIVIDE 16-BIT NO. BY 16-BIT NO.
+                      ;   __
+MOV AX, [1000H]       ;AX/BX
+MOV BX, [1002H]       ;__/
+DIV BX
+MOV [2000H], AX       ;QUOTIENT
+MOV [2010H], DX       ;REMAINDER
+HLT
