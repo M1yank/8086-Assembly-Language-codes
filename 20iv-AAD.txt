@@ -1,0 +1,7 @@
+;AAD - ASCII ADJUST before DIVISION  
+;DIVIDE 67 BY 9
+MOV AX, 0607H     
+MOV BL, 09H        
+AAD                ;AX=0043 = 43H =67D
+DIV BL             ;REMAINDER IN AH,QUOTIENT IN AL    
+HLT

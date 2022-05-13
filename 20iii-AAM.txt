@@ -1,0 +1,6 @@
+;AAM - ASCII ADJUST AFTER MULTIPLICATION
+MOV AL, 07H        ; 35H  //ascii
+MOV BL, 09H        ; 39H  //ascii
+MUL BL             ; answer in decimal = 63    (06 03)
+AAM                
+HLT

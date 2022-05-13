@@ -1,0 +1,6 @@
+;AAA - ASCII ADJUST AFTER ADDITION
+MOV AL, 34H        ; 4D  //ascii
+MOV BL, 39H        ; 9D  //ascii
+ADD AL, BL         ; answer in decimal = 1 3
+AAA
+HLT

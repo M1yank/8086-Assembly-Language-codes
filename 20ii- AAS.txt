@@ -1,0 +1,6 @@
+;AAS - ASCII ADJUST AFTER SUBTRACTION
+MOV AL, 34H        ; 4D  //ascii
+MOV BL, 39H        ; 9D  //ascii
+SUB AL, BL         ; answer in decimal = -5    (FF 05)
+AAS                ; if negative, stored in 10's compliment form
+HLT
