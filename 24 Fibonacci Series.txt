@@ -1,0 +1,18 @@
+;;FIBONACCI SERIES
+
+MOV CL, 0AH             ;TOTAL NO. COUNT   
+MOV SI, 500H
+MOV [SI], 00H           ;FIRST NO..
+INC SI
+MOV [SI], 01H           ;SECOND NO.
+DEC CL                  ;DECREMENT 2 TIMES COUNT
+DEC CL
+L1: INC SI
+MOV AL, [SI-2]
+ADD AL, [SI-1]
+MOV [SI], AL
+DEC CL
+JNZ L1
+HLT
+
+

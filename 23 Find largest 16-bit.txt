@@ -1,0 +1,17 @@
+;find the largest no. from array of 16-bit nos
+
+MOV BX, 1000H             ;TOTAL NO. COUNT IN [1000H]
+MOV CL, [BX]              ;LETS SAY (( CL=5 ))
+INC BX
+MOV AX, [BX]
+DEC CL
+BACK: INC BX
+INC BX
+CMP AX, [BX]
+JNC NEXT
+MOV AX, [BX]
+NEXT: DEC CL
+JNZ BACK
+MOV [1020H], AX
+
+HLT

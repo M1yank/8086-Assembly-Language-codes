@@ -1,0 +1,39 @@
+;;COUNT NO. OF +VE & -VE NOS. IN ARRAY
+
+#LOAD_SEGMENT=0500h#
+#LOAD_OFFSET=0000h#
+
+;#CS=0500h#
+;#IP=0000h#
+
+;#DS=0500h#
+;#ES=0500h#
+
+;#SS=0500h#
+;#SP=FFFEh#
+
+;#AX=0000h#
+;#BX=0000h#
+;#CX=0000h#      
+;#DX=0000h#
+;#SI=0000h#
+;#DI=0000h#
+;#BP=0000h#
+
+
+MOV CL, 0AH             ;TOTAL NO. COUNT
+MOV BL, 00H             ;POSITIVE NO. COUNT
+MOV DL, 00H             ;NEGATIVE NO. COUNT
+LEA SI, [1000H]
+L1: MOV AL, [SI]
+SHL AL, 01
+JNC L2
+INC DL                  
+JMP L3
+L2: INC BL
+L3: INC SI
+DEC CL
+JNZ L1
+MOV [100AH], BL
+MOV [100BH], DL
+HLT
